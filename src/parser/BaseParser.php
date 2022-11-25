@@ -8,7 +8,12 @@ use Altaist\Parser\Contract\IParseResultFormatter;
 use Altaist\Parser\Contract\ITextProcessor;
 use Altaist\Parser\Contract\ITransport;
 use Altaist\Parser\Contract\ITransportSource;
-
+	/**
+	 * Базовый класс для парсеров 
+	 * Использует в работе транспорт ITransport для получения данных, процессор IProcessor для парсинга, возвращает хранилище IStorage
+	 * Инициализируется билдером 
+	 * 
+	 **/
 abstract class BaseParser implements IParser
 {
 
@@ -17,7 +22,7 @@ abstract class BaseParser implements IParser
 	
 	
 	/**
-	 * Creates with extarnal helpers
+	 * Вызывается билдером, передаются подготовленные объекты
 	 **/
 	public function __construct(ITRansport $transport, ITextProcessor $processor)
 	{
