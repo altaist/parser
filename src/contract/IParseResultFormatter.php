@@ -2,7 +2,7 @@
 
 namespace Altaist\Parser\Contract;
 
-interface IParseResult
+interface IParseResultFormatter
 {
 	public function getStorage(): IStorage;
 	public function getAsArray(): array;

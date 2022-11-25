@@ -2,5 +2,5 @@
 namespace Altaist\Parser\Contract;
 
 interface ITransport{
-	public function load(ITransportSource $source);
+	public function load(ITransportSource $source): string;
 }

@@ -3,6 +3,6 @@ namespace Altaist\Parser\Contract;
 
 interface ITransportSource
 {
-	public function getAddress():string;
-	public function validateAddress(): bool;
+	public function getSource():string;
+	public function validate(): bool;
 }

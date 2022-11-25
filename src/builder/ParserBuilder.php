@@ -1,15 +1,7 @@
 <?php
 namespace Altaist\Parser\Builder;
 
-/**
- * Creates parser by parser (IParser), transport (ITransport), processor(ITextProcessor), storage(IStorage) classes
- *  
- **/
-class ParserBuilder extends BaseParserBuilder{
-	/**
-	 * @var PREG_RULES Constant with preg used by TextProcessor
-	 */
-	const PREG_RULES = "#<\w*?>+?#im";
+class ParserBuilder{
 	
 	private $transportClass = null;
 	private $storageClass = null;
@@ -41,7 +33,7 @@ class ParserBuilder extends BaseParserBuilder{
 	public function build(){
 		$transport = new $this->transportClass();
 		$storage = new $this->storageClass();
-		$processor = new $this->processorClass($storage, self::PREG_RULES);
+		$processor = new $this->processorClass($storage);
 		
 		$parser = new $this->parserClass($transport, $processor);
 		return $parser;
